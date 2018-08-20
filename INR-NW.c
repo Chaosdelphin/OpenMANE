@@ -207,14 +207,7 @@ INR_NW_tx (struct sk_buff *skb, struct net_device *nwdev)
 				if(match)if(memcmp(skb->data[0x70],&video_layer,1)==0)match=1;else match=0;
 				if(match)if(memcmp(skb->data[0x57],&dst_port,2)==0)match=1;else match=0;
 				
-				if (match==0)netif_receive_skb(skb);
-			
-				
-	
-			
-				
-			
-			kfree_skb (skb); 
+				if (match==0)netif_receive_skb(skb);else kfree_skb (skb); 
 			
 
 errorhandling:
